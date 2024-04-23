@@ -1,0 +1,24 @@
+{
+  "name": "auto_installer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "NewtubeDownloader.js",
+  "bin": {
+    "Newtube_Installer": "NewtubeDownloader.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg . -o Newtube_Installer.exe --options no-bytecode"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.12",
+    "axios": "^1.6.8",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}
