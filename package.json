@@ -1,24 +1,24 @@
 {
-  "name": "auto_installer",
+  "name": "Newtube-Installer",
   "version": "1.0.0",
   "description": "",
-  "main": "NewtubeDownloader.js",
-  "bin": {
-    "Newtube_Installer": "NewtubeDownloader.js"
-  },
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pkg . -o Newtube_Installer.exe --options no-bytecode"
+    "Build": "pkg NewTube-Installer.js --config package.json && node _Pack_NewTube-Installer.js",
+    "release": "node _Release.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@octokit/rest": "^20.1.0",
     "adm-zip": "^0.5.12",
-    "axios": "^1.6.8",
-    "readline-sync": "^1.4.10"
+    "node-fetch": "2"
   },
-  "devDependencies": {
-    "pkg": "^5.8.1"
+  "pkg": {
+    "outputPath": "build/NewTube-Installer",
+    "targets": [
+      "node18-win"
+    ]
   }
 }
