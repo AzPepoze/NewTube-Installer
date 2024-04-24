@@ -17,6 +17,9 @@ importers:
       node-fetch:
         specifier: '2'
         version: 2.7.0
+      resedit:
+        specifier: ^2.0.2
+        version: 2.0.2
 
 packages:
 
@@ -99,6 +102,14 @@ packages:
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
+
+  pe-library@1.0.1:
+    resolution: {integrity: sha512-nh39Mo1eGWmZS7y+mK/dQIqg7S1lp38DpRxkyoHf0ZcUs/HDc+yyTjuOtTvSMZHmfSLuSQaX945u05Y2Q6UWZg==}
+    engines: {node: '>=14', npm: '>=7'}
+
+  resedit@2.0.2:
+    resolution: {integrity: sha512-UKTnq602iVe+W5SyRAQx/WdWMnlDiONfXBLFg/ur4QE4EQQ8eP7Jgm5mNXdK12kKawk1vvXPja2iXKqZiGDW6Q==}
+    engines: {node: '>=14', npm: '>=7'}
 
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
@@ -199,6 +210,12 @@ snapshots:
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
+
+  pe-library@1.0.1: {}
+
+  resedit@2.0.2:
+    dependencies:
+      pe-library: 1.0.1
 
   tr46@0.0.3: {}
 
