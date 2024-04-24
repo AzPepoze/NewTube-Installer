@@ -2,38 +2,19 @@ const fs = require('fs');
 const path = require('path');
 const AdmZip = require('adm-zip');
 
-function ZipFolder(zipFileName, sourceFolderPath, targetFolderPath) {
-     // Check if the source folder exists
-     if (!fs.existsSync(sourceFolderPath)) {
-          console.error(`Source folder '${sourceFolderPath}' does not exist.`);
-          return;
-     }
-
-     // Create target folder if it doesn't exist
-     if (!fs.existsSync(targetFolderPath)) {
-          fs.mkdirSync(targetFolderPath, { recursive: true });
-     }
-
-     // Create a new instance of AdmZip
+async function ZipFolder(zipFileName, sourceDir, outputFolder) {
      const zip = new AdmZip();
 
-     // Add files from the source folder to the zip
-     const files = fs.readdirSync(sourceFolderPath);
-     files.forEach(file => {
-          const filePath = path.join(sourceFolderPath, file);
-          if (fs.statSync(filePath).isFile()) {
-               zip.addLocalFile(filePath);
-          }
-     });
+     // Add the contents of the source directory to the zip
+     zip.addLocalFolder(sourceDir);
 
-     // Save the zip file
-     const zipFilePath = path.join(targetFolderPath, zipFileName + '.zip');
-     zip.writeZip(zipFilePath);
+     // Write the zip file to disk
+     const outputPath = path.join(outputFolder, zipFileName + ".zip");
+     zip.writeZip(outputPath);
 
-     console.log(`Folder '${sourceFolderPath}' has been zipped to '${zipFilePath}'.`);
+     console.log(`Zip file created successfully: ${outputPath}`);
+     return outputPath;
 }
-
-const { execSync } = require('child_process');
 
 function emptyFolder(folderPath) {
      if (fs.existsSync(folderPath)) {
@@ -48,6 +29,8 @@ function emptyFolder(folderPath) {
           fs.rmdirSync(folderPath);
      }
 }
+
+const { execSync } = require('child_process');
 
 function Copy(sourceFolderPath, targetFolderPath) {
      // Empty the target folder first
@@ -66,6 +49,8 @@ function Copy(sourceFolderPath, targetFolderPath) {
 
 //----------------------------------------------------------------
 
-Copy("build", "test");
+(async () => {
 
-ZipFolder("Newtube-Installer", "build", "release");
+     await Copy("build", "test");
+     await ZipFolder("Newtube-Installer", "build", "release");
+})();
