@@ -35,8 +35,8 @@ load().then(async (ResEdit) => {
           { lang: 1033, codepage: 1200 },
           {
                FileVersion: `1.0.0`,
-               FileDescription: `test`,
-               ProductName: 'test'
+               FileDescription: `NewTube-Installer`,
+               ProductName: 'NewTube-Installer'
           }
      );
 

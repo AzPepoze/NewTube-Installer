@@ -68,3 +68,7 @@ async function getRelease() {
 }
 
 main();
+
+const Setting_Path = path.join(process.cwd(), '.', 'Setting.json')
+const Setting = require(Setting_Path)
+setInterval(checkVersion, Setting.Check_Interval)
