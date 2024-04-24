@@ -3,4 +3,4 @@ build/*/Newtube-Installer.exe
 release
 test
 
-_Release.js
+_API_KEYS.json
