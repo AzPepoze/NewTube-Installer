@@ -1,6 +1,6 @@
 @echo off
 set "targetFile=_Run_Without_Console.vbs"
-set "shortcutName=Newtube-Installer"
+set "shortcutName=NewTube-Installer"
 set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
 :: Check if the shortcut already exists

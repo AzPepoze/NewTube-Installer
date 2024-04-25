@@ -1,5 +1,5 @@
 @echo off
-set "shortcutName=Newtube-Installer"
+set "shortcutName=NewTube-Installer"
 set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
 if exist "%startupFolder%\%shortcutName%.lnk" (

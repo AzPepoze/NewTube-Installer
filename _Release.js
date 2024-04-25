@@ -11,8 +11,15 @@ const octokit = new Octokit({
      auth: require('./_API_KEYS.json').Github
 });
 
-const owner = "AzPepoze";
-const repo = "Newtube-Installer";
+let owner;
+function Set_Owner(params) {
+     owner = params
+}
+
+let repo;
+function Set_Repo(params) {
+     repo = params
+}
 
 async function confirm_ask(question) {
      return new Promise((resolve, reject) => {
@@ -137,13 +144,16 @@ async function Release(filePath, fileName, releaseId) {
 
 (async () => {
      try {
+          Set_Owner("AzPepoze")
+          Set_Repo("NewTube-Installer")
+
           const version = await GetVersion("./package.json");
           if (!version) return;
 
           const releaseId = await CreateRelease(version,"[Watch tutorial video](https://youtu.be/WQc8zAU6ua8)");
           if (!releaseId) return;
 
-          await Release("release/Newtube-Installer.zip", `Newtube-Installer_${version}.zip`, releaseId);
+          await Release("release/NewTube-Installer.zip", `NewTube-Installer_${version}.zip`, releaseId);
 
           rl.close();
      } catch (error) {

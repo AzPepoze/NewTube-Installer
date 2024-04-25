@@ -1,6 +1,6 @@
 @echo off
-set "targetFile=Newtube-Installer.exe"
-set "shortcutName=Newtube-Installer"
+set "targetFile=NewTube-Installer.exe"
+set "shortcutName=NewTube-Installer"
 set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
 :: Check if the shortcut already exists

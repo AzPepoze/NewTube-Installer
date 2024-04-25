@@ -52,5 +52,5 @@ function Copy(sourceFolderPath, targetFolderPath) {
 (async () => {
 
      await Copy("build", "test");
-     await ZipFolder("Newtube-Installer", "build", "release");
+     await ZipFolder("NewTube-Installer", "build", "release");
 })();
