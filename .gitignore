@@ -4,3 +4,5 @@ release
 test
 
 _API_KEYS.json
+
+$Release.js

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "pkg NewTube-Installer.js --config package.json && node _Change_Icon.js && node _Pack_NewTube-Installer.js",
-    "release": "node _Release.js"
+    "release": "node $Release.js"
   },
   "keywords": [],
   "author": "",
